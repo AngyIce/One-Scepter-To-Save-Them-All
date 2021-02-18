@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class VirusSpawn : MonoBehaviour {
 
 	private float moveSpeed = 100f;
 
