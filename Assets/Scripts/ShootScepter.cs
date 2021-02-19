@@ -11,9 +11,13 @@ public class ShootScepter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+
+        if (Input.GetButton("Fire1"))
         {
             Shooting();
+
+            Vector3 forward = transform.TransformDirection(Vector3.forward) * 100;
+            Debug.DrawRay(transform.position, forward, Color.green);
         }
     }
 
