@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseSpawner : MonoBehaviour
+public class VirusSpawner : MonoBehaviour
 {
     private float nextSpawnTime;
 
@@ -11,6 +11,8 @@ public class BaseSpawner : MonoBehaviour
 
     [SerializeField]
     public float spawnDelay = 10;
+
+    private GameObject instantiatedObj;
 
     void Update()
     {
@@ -23,7 +25,8 @@ public class BaseSpawner : MonoBehaviour
     private void Spawn()
     {
         nextSpawnTime = Time.time + spawnDelay;
-        Instantiate(virusPrefab, transform.position, transform.rotation);
+        instantiatedObj = GameObject.Instantiate(virusPrefab, transform.position, transform.rotation);
+        instantiatedObj.transform.parent = GameObject.Find("Earth").transform;
     }
 
     private bool ShouldSpawn()

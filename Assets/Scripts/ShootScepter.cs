@@ -16,8 +16,8 @@ public class ShootScepter : MonoBehaviour
         {
             Shooting();
 
-            Vector3 forward = transform.TransformDirection(Vector3.forward) * 100;
-            Debug.DrawRay(transform.position, forward, Color.green);
+            Vector3 forward = ShootingPoint.TransformDirection(Vector3.forward) * 0.5f;
+            Debug.DrawRay(ShootingPoint.position, forward, Color.green);
         }
     }
 
@@ -28,7 +28,7 @@ public class ShootScepter : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            Target target = hit.transform.GetComponent<Target>();
+            VirusTarget target = hit.transform.GetComponent<VirusTarget>();
             if (target != null)
             {
                 target.TakeDamage(damage);
