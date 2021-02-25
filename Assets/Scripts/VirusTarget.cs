@@ -12,11 +12,14 @@ public class VirusTarget : MonoBehaviour
         if (health <= 0f)
         {
             Die();
+            ScorePoints.scoreValue += 20;
         }
 
         void Die ()
         {
             Destroy(gameObject);
         }
+
     }
+ 
 }
