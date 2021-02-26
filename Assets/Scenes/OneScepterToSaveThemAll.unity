@@ -633,7 +633,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 2.112e-41, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: NaN, y: 0, z: 7e-44, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1255,15 +1255,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3483519068239298410, guid: 7e889964437cd264baced9721571eb70, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 245.36627
+      value: 2.221
       objectReference: {fileID: 0}
     - target: {fileID: 3483519068239298410, guid: 7e889964437cd264baced9721571eb70, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 263.54337
+      value: 0.545
       objectReference: {fileID: 0}
     - target: {fileID: 3483519068239298410, guid: 7e889964437cd264baced9721571eb70, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.453278
+      value: -0.251
       objectReference: {fileID: 0}
     - target: {fileID: 3483519068239298410, guid: 7e889964437cd264baced9721571eb70, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1297,6 +1297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserBeam
       objectReference: {fileID: 0}
+    - target: {fileID: 8681872841117963996, guid: 7e889964437cd264baced9721571eb70, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 67d7bc022d866864fbf74a08a3951734, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e889964437cd264baced9721571eb70, type: 3}
 --- !u!4 &5330957851173126525
