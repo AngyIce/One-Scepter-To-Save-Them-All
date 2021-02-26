@@ -8,6 +8,12 @@ public class ShootScepter : MonoBehaviour
     public float range = 100f;
 
     public Transform ShootingPoint;
+    public GameObject laserPrefab;
+
+    void Start()
+    {
+        DisableLaser();
+    }
 
     void Update()
     {
@@ -18,6 +24,16 @@ public class ShootScepter : MonoBehaviour
 
             Vector3 forward = ShootingPoint.TransformDirection(Vector3.forward) * 0.5f;
             Debug.DrawRay(ShootingPoint.position, forward, Color.green);
+        }
+
+        if (Input.GetButton("Fire1"))
+        {
+            EnableLaser();
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            DisableLaser();
         }
     }
 
@@ -35,5 +51,15 @@ public class ShootScepter : MonoBehaviour
 
             }
         }
+    }
+
+    void EnableLaser()
+    {
+        laserPrefab.SetActive(true);
+    }
+
+    void DisableLaser()
+    {
+        laserPrefab.SetActive(false);
     }
 }

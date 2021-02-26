@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
             EndRound();
         }
 
-        if (remainingTime > -5.0f)
+        if (remainingTime > -10.0f)
         {
             StopAction();
         }

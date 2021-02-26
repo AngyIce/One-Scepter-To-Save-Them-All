@@ -6,8 +6,8 @@ public class EarthRotator : MonoBehaviour
 {
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal") * 250f * Time.deltaTime;
-        float moveVertical = Input.GetAxis("Vertical") * 250f * Time.deltaTime;
+        float moveHorizontal = Input.GetAxis("Horizontal") * 200f * Time.deltaTime;
+        float moveVertical = Input.GetAxis("Vertical") * 200f * Time.deltaTime;
 
         transform.Rotate(moveVertical, -moveHorizontal,  0, Space.World);
     }
