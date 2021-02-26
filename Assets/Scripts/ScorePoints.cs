@@ -12,7 +12,6 @@ public class ScorePoints : MonoBehaviour
         Score = GetComponent<Text>();
     }
 
-    
     void Update()
     {
         Score.text = "SCORE " + scoreValue;

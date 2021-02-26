@@ -33,4 +33,5 @@ public class VirusSpawner : MonoBehaviour
     {
         return Time.time >= nextSpawnTime;
     }
+
 }
