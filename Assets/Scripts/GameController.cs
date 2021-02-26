@@ -9,7 +9,8 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
-    public UnityEvent Action;
+    public UnityEvent startAction;
+    public UnityEvent stopAction;
 
     public Text timeCounter;
     public bool gamePlaying { get; private set; }
@@ -41,13 +42,18 @@ public class GameController : MonoBehaviour
             remainingTime = Time.time - startTime;
             timePlaying = TimeSpan.FromSeconds(remainingTime);
 
-            string timePlayingString = "TIMER: " + timePlaying.ToString("mm' : 'ss");
+            string timePlayingString = "TIMER " + timePlaying.ToString("mm' : 'ss");
             timeCounter.text = timePlayingString;
         }
 
         if (remainingTime > 0.0f)
         {
             EndRound();
+        }
+
+        if (remainingTime > -5.0f)
+        {
+            StopAction();
         }
     }
 
@@ -58,6 +64,11 @@ public class GameController : MonoBehaviour
 
     public void SpawnAction()
     {
-        Action.Invoke();
+        startAction.Invoke();
+    }
+
+    public void StopAction()
+    {
+        stopAction.Invoke();
     }
 }
