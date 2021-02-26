@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
+    public UnityEvent Action;
+
     public Text timeCounter;
     public bool gamePlaying { get; private set; }
     private float startTime, remainingTime;
     TimeSpan timePlaying;
+
+    public float roundTime;
 
     private void Awake()
     {
@@ -21,13 +26,12 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         gamePlaying = false;
-        BeginGame();
     }
 
-    private void BeginGame()
+    public void BeginGame()
     {
         gamePlaying = true;
-        startTime = Time.time + 10f;
+        startTime = Time.time + roundTime;
     }
 
     private void Update()
@@ -35,10 +39,9 @@ public class GameController : MonoBehaviour
         if (gamePlaying == true)
         {
             remainingTime = Time.time - startTime;
-            Debug.Log(remainingTime);
             timePlaying = TimeSpan.FromSeconds(remainingTime);
 
-            string timePlayingString = "TIMER: " + timePlaying.ToString("mm' : 'ss'.'ff");
+            string timePlayingString = "TIMER: " + timePlaying.ToString("mm' : 'ss");
             timeCounter.text = timePlayingString;
         }
 
@@ -51,5 +54,10 @@ public class GameController : MonoBehaviour
     private void EndRound()
     {
         gamePlaying = false;
+    }
+
+    public void SpawnAction()
+    {
+        Action.Invoke();
     }
 }
