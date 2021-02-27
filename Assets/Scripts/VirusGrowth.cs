@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class VirusGrowth : MonoBehaviour
 {
-    private float maxSize = 0.02f;
-    private float growFactor = 0.001f;
+    private float maxSize = 3f;
+    private float growFactor = 0.8f;
     private float waitTime;
 
     void Start()

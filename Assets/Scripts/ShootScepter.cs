@@ -7,7 +7,7 @@ public class ShootScepter : MonoBehaviour
     public float damage = 10f;
     public float range = 100f;
 
-    public Transform ShootingPoint;
+    public new Camera camera;
     public GameObject laserPrefab;
 
     void Start()
@@ -21,9 +21,6 @@ public class ShootScepter : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
             Shooting();
-
-            Vector3 forward = ShootingPoint.TransformDirection(Vector3.forward) * 0.5f;
-            Debug.DrawRay(ShootingPoint.position, forward, Color.green);
         }
 
         if (Input.GetButton("Fire1"))
@@ -40,9 +37,10 @@ public class ShootScepter : MonoBehaviour
     void Shooting()
     {
         RaycastHit hit;
-        if (Physics.Raycast(ShootingPoint.transform.position, ShootingPoint.transform.forward, out hit, range))
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
+            Debug.Log(hit.point);
 
             VirusTarget target = hit.transform.GetComponent<VirusTarget>();
             if (target != null)
