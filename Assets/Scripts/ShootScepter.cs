@@ -18,12 +18,12 @@ public class ShootScepter : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && GameController.isEnded == false)
         {
             Shooting();
         }
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && GameController.isEnded == false)
         {
             EnableLaser();
         }
@@ -39,9 +39,6 @@ public class ShootScepter : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
-            Debug.Log(hit.point);
-
             VirusTarget target = hit.transform.GetComponent<VirusTarget>();
             if (target != null)
             {

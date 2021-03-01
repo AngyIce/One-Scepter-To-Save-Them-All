@@ -7,6 +7,7 @@ public class CountDown : MonoBehaviour
 {
     public int countdownTime;
     public Text countndownDisplay;
+    public static bool onemoretime = false;
 
     private void Start()
     {
@@ -29,9 +30,21 @@ public class CountDown : MonoBehaviour
         GameController.instance.SpawnAction();
         GameController.instance.BeginGame();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         countndownDisplay.gameObject.SetActive(false);
+    }
 
+    void FixedUpdate()
+    {
+        if(GameController.beginRestart == true && onemoretime == false)
+        {
+            countdownTime = 5;
+            countndownDisplay.gameObject.SetActive(true);
+
+            StartCoroutine(CountdownToStart());
+
+            onemoretime = true;
+        }
     }
 }

@@ -8,7 +8,7 @@ public class PostScoreTest : MonoBehaviour
     public static PostScoreTest Singleton;
 
     public string DreamloLink = "http://dreamlo.com/lb/qSjVpoFLT0G7H38zsZkJvQiGLL6LwiakK5YaNJt3lIzA";
-    public string PlayerName;
+    public static string PlayerName;
     public float tempScore;   
     public List<ScoreEntry> ScoreBoardEntries = new List<ScoreEntry>();
 
@@ -22,7 +22,7 @@ public class PostScoreTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-             
+         
     }
 
     // Update is called once per frame
@@ -31,7 +31,6 @@ public class PostScoreTest : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             PostNewScore(PlayerName, ScorePoints.scoreValue);
-
         }
     }
 
