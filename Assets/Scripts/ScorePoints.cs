@@ -10,6 +10,7 @@ public class ScorePoints : MonoBehaviour
     void Start()
     {
         Score = GetComponent<Text>();
+        scoreValue = 0;
     }
 
     void Update()

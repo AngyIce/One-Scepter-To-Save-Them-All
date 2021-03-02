@@ -40,10 +40,7 @@ public class ShootScepter : MonoBehaviour
         if (Input.GetButtonUp("Fire1"))
         {
             DisableLaser();
-
-            
-                laser.Stop();
-            
+            laser.Stop();
         }
     }
 

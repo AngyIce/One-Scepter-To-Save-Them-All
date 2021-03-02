@@ -7,11 +7,12 @@ public class CountDown : MonoBehaviour
 {
     public int countdownTime;
     public Text countndownDisplay;
-    public static bool onemoretime = false;
+    public static bool onemoretime;
 
     private void Start()
     {
         StartCoroutine(CountdownToStart());
+        onemoretime = false;
     }
 
     IEnumerator CountdownToStart()

@@ -10,6 +10,11 @@ public class VirusSpawner : MonoBehaviour
 
     private GameObject instantiatedObj;
 
+    void Start()
+    {
+        spawnDelay = 8;
+    }
+
     void Update()
     {
         if (ShouldSpawn())

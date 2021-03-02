@@ -11,15 +11,15 @@ public class GameController : MonoBehaviour
 
     public UnityEvent startAction;
     public UnityEvent stopAction;
-    public static bool onetime = false;
-    public static bool endones = false;
+    public static bool onetime;
+    public static bool endones;
     public GameObject gameOverPanel;
     public Text timeCounter;
     public GameObject waveCompleted;
     public bool gamePlaying { get; private set; }
     private float startTime, remainingTime;
-    public static bool isEnded = false;
-    public static bool isWaveCompleted = false;
+    public static bool isEnded;
+    public static bool isWaveCompleted;
     TimeSpan timePlaying;
 
     public float roundTime;
@@ -34,6 +34,9 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         gamePlaying = false;
+        isEnded = false;
+        onetime = false;
+        endones = false;
     }
 
     public void BeginGame()
