@@ -37,6 +37,8 @@ public class GameController : MonoBehaviour
         isEnded = false;
         onetime = false;
         endones = false;
+
+        Cursor.visible = false;
     }
 
     public void BeginGame()
@@ -104,6 +106,7 @@ public class GameController : MonoBehaviour
     {
         gamePlaying = false;
         Invoke("ShowGameOver", 0.5f);
+        Cursor.visible = true;
         isEnded = true;
     }
 

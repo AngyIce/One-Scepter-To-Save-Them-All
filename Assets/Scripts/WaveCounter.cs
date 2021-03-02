@@ -12,6 +12,7 @@ public class WaveCounter : MonoBehaviour
     void Start()
     {
         Wave = GetComponent<Text>();
+        waveCount = 1;
     }
 
     void Update()
