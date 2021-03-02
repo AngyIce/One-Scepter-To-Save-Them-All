@@ -10,16 +10,9 @@ public class LeaderBoardVisualizer : MonoBehaviour
 
     public List<GameObject> currentlyInstantiatedTexts = new List<GameObject>();
 
-    // Start is called before the first frame update
     void Start()
     {
         PostScoreTest.Singleton.ScoreBoardUpdatedEvent.AddListener(UpdateScoreVisualization);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-      
     }
 
     public void UpdateScoreVisualization()

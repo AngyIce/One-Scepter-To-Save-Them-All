@@ -17,7 +17,7 @@ public class VirusTarget : MonoBehaviour
 
         void Die ()
         {
-            Destroy(gameObject);
+            Destroy(gameObject);           
         }
 
     }

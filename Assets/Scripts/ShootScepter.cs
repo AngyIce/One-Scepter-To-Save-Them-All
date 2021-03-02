@@ -10,6 +10,9 @@ public class ShootScepter : MonoBehaviour
     public new Camera camera;
     public GameObject laserPrefab;
 
+    public AudioSource laser;
+    public AudioSource death;
+
     void Start()
     {
         DisableLaser();
@@ -26,6 +29,12 @@ public class ShootScepter : MonoBehaviour
         if (Input.GetButton("Fire1") && GameController.isEnded == false)
         {
             EnableLaser();
+
+            if (!laser.isPlaying)
+            {
+                laser.Play();
+            }
+            
         }
 
         if (Input.GetButtonUp("Fire1"))
@@ -43,7 +52,7 @@ public class ShootScepter : MonoBehaviour
             if (target != null)
             {
                 target.TakeDamage(damage);
-
+                death.Play();
             }
         }
     }
