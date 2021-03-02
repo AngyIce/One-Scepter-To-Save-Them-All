@@ -20,7 +20,7 @@ public class ShootScepter : MonoBehaviour
 
         if (Input.GetButton("Fire1") && GameController.isEnded == false)
         {
-            Shooting();
+            Shooting(); 
         }
 
         if (Input.GetButton("Fire1") && GameController.isEnded == false)

@@ -15,9 +15,11 @@ public class GameController : MonoBehaviour
     public static bool endones = false;
     public GameObject gameOverPanel;
     public Text timeCounter;
+    public GameObject waveCompleted;
     public bool gamePlaying { get; private set; }
     private float startTime, remainingTime;
     public static bool isEnded = false;
+    public static bool isWaveCompleted = false;
     TimeSpan timePlaying;
 
     public float roundTime;
@@ -53,10 +55,15 @@ public class GameController : MonoBehaviour
             timeCounter.text = timePlayingString;
         }
 
+        /*if (GameObject.Find("Virus(Clone)") == null && isWaveCompleted == true)
+        {
+            waveCompleted.SetActive(true);
+        }*/
+
         if (remainingTime > 0.0f && onetime == false && GameObject.Find("Virus(Clone)") == null)
         {
             EndRound();
-            onetime = true;
+            onetime = true; 
         }
 
         if (remainingTime > -10.0f)
@@ -77,6 +84,7 @@ public class GameController : MonoBehaviour
         gamePlaying = false;
         beginRestart = true;
         VirusSpawner.spawnDelay = VirusSpawner.spawnDelay - 1;
+        WaveCounter.waveCount = WaveCounter.waveCount += 1;
     }
 
     public void SpawnAction()
