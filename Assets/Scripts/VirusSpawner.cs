@@ -15,7 +15,6 @@ public class VirusSpawner : MonoBehaviour
         if (ShouldSpawn())
         {
             Spawn();
-            Debug.Log(spawnDelay);
         }
     }
 
